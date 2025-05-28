@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="1" author="votre_nom">
+        <createTable tableName="abonne">
+            <column name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nom" type="VARCHAR(255)"/>
+            <column name="prenom" type="VARCHAR(255)"/>
+            <column name="sexe" type="VARCHAR(1)"/>
+            <column name="num_telephone" type="VARCHAR(50)"/>
+            <column name="ville" type="VARCHAR(255)"/>
+            <column name="secteur" type="VARCHAR(255)"/>
+            <column name="mail" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
