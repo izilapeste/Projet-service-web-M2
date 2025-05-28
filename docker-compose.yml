@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  postgres-db:
+    image: postgres:latest
+    container_name: postgres-sonabel
+    environment:
+      POSTGRES_DB: sonabel_bd
+      POSTGRES_USER: sonabel
+      POSTGRES_PASSWORD: sonabel
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres_data:
+    driver: local
