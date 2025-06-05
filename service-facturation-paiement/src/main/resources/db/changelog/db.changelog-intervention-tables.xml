@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+      http://www.liquibase.org/xml/ns/dbchangelog
+      https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+
+    <!-- Table client -->
+    <changeSet id="001" author="Issouf Traore">
+        <createTable tableName="client">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nom" type="VARCHAR(100)"/>
+            <column name="prenom" type="VARCHAR(100)"/>
+            <column name="sexe" type="VARCHAR(1)"/> <!-- Enum: F, M -->
+            <column name="num_telephone" type="VARCHAR(20)"/>
+            <column name="ville" type="VARCHAR(100)"/>
+            <column name="secteur" type="VARCHAR(100)"/>
+            <column name="mail" type="VARCHAR(100)"/>
+        </createTable>
+    </changeSet>
+
+    <!-- Table technicien -->
+    <changeSet id="002" author="Issouf Traore">
+        <createTable tableName="technicien">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nom" type="VARCHAR(100)"/>
+            <column name="email" type="VARCHAR(100)"/>
+        </createTable>
+    </changeSet>
+
+    <!-- Table responsable -->
+    <changeSet id="003" author="Issouf Traore">
+        <createTable tableName="responsable">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nom" type="VARCHAR(100)"/>
+            <column name="email" type="VARCHAR(100)"/>
+        </createTable>
+    </changeSet>
+
+    <!-- Table intervention -->
+    <changeSet id="004" author="Issouf Traore">
+        <createTable tableName="intervention">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="description" type="TEXT"/>
+            <column name="commentaire" type="TEXT"/>
+            <column name="date_planifiee" type="VARCHAR(50)"/>
+            <column name="date_execution" type="VARCHAR(50)"/>
+            <column name="date_deman_date_time" type="VARCHAR(50)"/>
+            <column name="statut" type="VARCHAR(20)"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
