@@ -1,7 +1,5 @@
 package com.example.intervention.serviceintervention.model;
 
-import java.time.LocalDateTime;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,7 +14,12 @@ public class Intervention {
     private Long id;
 
     private String description;
-    private LocalDateTime datePlanifiee;
+    private String commentaire;
+
+    private String datePlanifiee;
+    private String dateExecution;
+    private String dateDemanDateTime;
+
     private String statut; // PLANIFIEE, EN_COURS, TERMINEE
 
     @ManyToOne
@@ -44,11 +47,11 @@ public class Intervention {
         this.description = description;
     }
     
-    public LocalDateTime getDatePlanifiee() {
+    public String getDatePlanifiee() {
         return datePlanifiee;
     }
     
-    public void setDatePlanifiee(LocalDateTime datePlanifiee) {
+    public void setDatePlanifiee(String datePlanifiee) {
         this.datePlanifiee = datePlanifiee;
     }
     
@@ -82,6 +85,22 @@ public class Intervention {
     
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    public String getDateExecution() {
+        return dateExecution;
+    }
+
+    public String getDateDemanDateTime() {
+        return dateDemanDateTime;
+    }
+
+    public String getCommentaire() {
+        return commentaire;
+    }
+
+    public void setCommentaire(String commentaire) {
+        this.commentaire = commentaire;
     }
 }
 

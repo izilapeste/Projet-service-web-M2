@@ -1,14 +1,14 @@
 package com.example.intervention.serviceintervention.service;
 
-import com.example.intervention.serviceintervention.model.Intervention;
-import com.example.intervention.serviceintervention.repository.InterventionRepository;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
+import com.example.intervention.serviceintervention.model.Intervention;
+import com.example.intervention.serviceintervention.repository.InterventionRepository;
 
 @Service
 public class InterventionService {
@@ -62,8 +62,12 @@ public class InterventionService {
 
     public Intervention demanderIntervention(Intervention intervention) {
         // Logique métier pour enregistrer ou traiter la demande
-        // Par exemple, sauvegarder en base, valider, envoyer une notification, etc.
         System.err.println("Service demander");
         return interventionRepository.save(intervention);
     }
+
+    public Intervention executerIntervention(Intervention intervention) {
+        intervention.setStatut("EXECUTEE");
+        return interventionRepository.save(intervention);    }
+
 }
