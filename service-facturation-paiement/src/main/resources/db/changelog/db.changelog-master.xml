@@ -8,4 +8,5 @@
 
     <include file="db/changelog/db.changelog-1.0.xml"/>
     <include file="db/changelog/db.changelog-intervention-tables.xml"/>
+    <include file="db/changelog/db.changelog-add-username-password.xml"/>
 </databaseChangeLog>
