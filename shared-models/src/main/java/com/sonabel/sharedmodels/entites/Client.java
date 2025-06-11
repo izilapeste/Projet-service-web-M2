@@ -33,4 +33,8 @@ public class Client {
     private String secteur;
 
     private String mail;
+
+    private String username;
+
+    private String password;
 }
